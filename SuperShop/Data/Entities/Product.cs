@@ -7,6 +7,8 @@ namespace SuperShop.Data.Entities
     {
         public int Id { get; set; }
 
+        [Required]
+        [MaxLength(50, ErrorMessage ="The field {0} can't contain {1} characters length.")]
         public string Name { get; set; }
 
         //formato moeda com duas casas decimais mas em modo edição não formata nada, deixa a pessoa escrever
@@ -18,12 +20,12 @@ namespace SuperShop.Data.Entities
 
         //ultima compra
         [Display(Name = "Last Purchase")]
-        public DateTime LastPurchase { get; set; }
+        public DateTime? LastPurchase { get; set; }
 
 
         //ultima venda
         [Display(Name = "Last Sale")]
-        public DateTime LastSale { get; set; }
+        public DateTime? LastSale { get; set; }
 
         //para saber se o produto está disponivel ou não
         [Display(Name = "Is Available")]
